@@ -6,6 +6,7 @@ import { FC } from 'react'
 import WelcomPage2 from './Pages/Welcompage2'
 import WelcomPage3 from './Pages/welcomepage3'
 import WelcomPage4 from './Pages/WelcomePage4'
+import RegisterPage from './Pages/RegisterPage'
 
 const router = createBrowserRouter([
 { 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
     {
       path:"/welcome4",
       element:<WelcomPage4/>
+    },
+    {
+      path:"/register",
+      element:<RegisterPage/>
     }
   ]
 }
