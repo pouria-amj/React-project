@@ -2,12 +2,12 @@ import { FC } from "react"
 import Textfield from "../Components/Textfield"
 import Button from "../Components/Button"
 
-const RegisterPage:FC = ()=>{
+const LogIn:FC = ()=>{
     return(
         <div>
         <img className="mt-[-50px]"  src="public/health.jpg" alt="" />
         <div className="pb-14">
-            <p className="text-center text-3xl mt-[-90px]  font-bold">Creat New Account</p>
+            <p className="text-center text-3xl mt-[-90px]  font-bold">Login to Your Account</p>
         </div>
         <form >
         <Textfield 
@@ -29,10 +29,10 @@ const RegisterPage:FC = ()=>{
     <label  className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
 </div>
 <div className="pt-4">
-<Button varient="containd">{"Sign up"}</Button>
+<Button varient="containd">{"Sign in"}</Button>
 </div>
 </form>
         </div>
     )
 }
-export default RegisterPage
+export default LogIn

@@ -7,6 +7,7 @@ import WelcomPage2 from './Pages/Welcompage2'
 import WelcomPage3 from './Pages/welcomepage3'
 import WelcomPage4 from './Pages/WelcomePage4'
 import RegisterPage from './Pages/RegisterPage'
+import LogIn from './Pages/Login'
 
 const router = createBrowserRouter([
 { 
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
     {
       path:"/register",
       element:<RegisterPage/>
+    },
+    {
+      path:"/login",
+      element:<LogIn/>
     }
   ]
 }
