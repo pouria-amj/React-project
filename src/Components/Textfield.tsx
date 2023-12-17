@@ -11,7 +11,7 @@ interface TextfieldProps extends React.InputHTMLAttributes<HTMLInputElement>{
 const Textfield: FC<TextfieldProps> =({label,icon,validation, helperText, ...restProps})=>{
   const id =useId()
     return(
-        <div className="w-full pb-3">
+        <div className="w-full pb-5">
        { Boolean(label)&& <label className="text-slate-500 text-lg" htmlFor={id}>{label}</label>}
         <div className="flex bg-slate-100 items-center px-1 focus-within:border-2 border-2 rounded-md border-transparent focus-within:border-blue-500">
        { Boolean(icon)&& <span  className="fill-slate-600">

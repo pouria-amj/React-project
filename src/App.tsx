@@ -8,6 +8,8 @@ import WelcomPage3 from './Pages/welcomepage3'
 import WelcomPage4 from './Pages/WelcomePage4'
 import RegisterPage from './Pages/RegisterPage'
 import LogIn from './Pages/Login'
+import ProfileLayout from './Components/ProfileLayout'
+import Profile from './Pages/Profile'
 
 const router = createBrowserRouter([
 { 
@@ -38,8 +40,18 @@ const router = createBrowserRouter([
       path:"/login",
       element:<LogIn/>
     }
-  ]
-}
+  ],
+},
+  {
+    path:"/user",
+    element:<ProfileLayout/>,
+    children: [
+      {
+        path: "/user/profile",
+        element:<Profile/>
+      }
+    ]
+  }
 ])
 
 const App : FC=()=> {
