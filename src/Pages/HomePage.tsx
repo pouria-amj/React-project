@@ -3,7 +3,7 @@ import Textfield from "../Components/Textfield"
 
 const HomePage:FC=()=>{
     return(
-        <>
+        <div>
         <div className="flex justify-between items-center">
             <p className="text-2xl font-semibold">Wellcome</p>
             <div className="flex gap-4">
@@ -25,15 +25,31 @@ const HomePage:FC=()=>{
       placeholder="Search"
       />
       </div>
-      <div className="bg-blue-300 rounded-2xl w-auto h-auto">
-        <div className="pt-8 pl-5 text-white">
+      <div className="bg-blue-300 rounded-3xl w-auto h-auto flex">
+        <div className="pt-8 pl-5 text-white w-1/2">
 
 <p className=" text-2xl font-medium ">Medical Checks!</p>
 <p className="">Check your health condition regulary to mimimize the incidence of disease in the futuer.</p>
+<button className="bg-white rounded-3xl text-blue-800 px-4 py-2 text-sm mt-6">Check Now </button>
         </div>
+<div className="w-1/2">
+
+      <img className="rounded-lg h-60 pb-2 " src="/wepik-export-20231218155540QWIT.png" />
+</div>
       </div>
-        <img className="rounded-lg h-44" src={"~doc5.jpg"} alt="" />
-        </>
+      <div className="flex justify-between pt-3 items-center ">
+        <p className="text-lg font-medium">Doctor Speciality</p>
+        <p className="text-sm font-medium text-blue-800">See All</p>
+      </div>
+      <div className="bg-slate-300 rounded-full w-10 h-10 content-center">
+        
+      <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+</svg>
+      </div>
+
+        </div>
     )
 }
 export default HomePage
