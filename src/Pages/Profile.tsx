@@ -5,7 +5,7 @@ const Profile:FC =()=> {
     const uploadedImage = React.useRef(null);
     const imageUploader = React.useRef(null);
   
-    const handleImageUpload = (e: { target: { files: [any]; }; }) => {
+    const handleImageUpload = (e:React.FormEvent):void => {
       const [file] = e.target.files;
       if (file) {
         const reader = new FileReader();

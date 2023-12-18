@@ -18,7 +18,7 @@ const Textfield: FC<TextfieldProps> =({label,icon,validation, helperText, ...res
         {icon}
         </span>}
         <input className="w-full h-full px-2 py-3 bg-transparent outline-none border-none" 
-        {...restProps}
+        {...restProps }
         id={id}
         {...validation}
         />

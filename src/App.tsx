@@ -10,6 +10,8 @@ import RegisterPage from './Pages/RegisterPage'
 import LogIn from './Pages/Login'
 import ProfileLayout from './Components/ProfileLayout'
 import Profile from './Pages/Profile'
+import HomeLayout from './Components/HomeLayout'
+import HomePage from './Pages/HomePage'
 
 const router = createBrowserRouter([
 { 
@@ -49,6 +51,16 @@ const router = createBrowserRouter([
       {
         path: "/user/profile",
         element:<Profile/>
+      }
+    ]
+  },
+  {
+    path:"/home",
+    element:<HomeLayout/>,
+    children:[
+      {
+path:"/home/homepage",
+element:<HomePage/>
       }
     ]
   }
