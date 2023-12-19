@@ -12,7 +12,7 @@ import ProfileLayout from './Components/ProfileLayout'
 import Profile from './Pages/Profile'
 import HomeLayout from './Components/HomeLayout'
 import HomePage from './Pages/HomePage'
-
+import NotificationPage from './Pages/Notfication'
 const router = createBrowserRouter([
 { 
   path:"/",
@@ -61,6 +61,10 @@ const router = createBrowserRouter([
       {
 path:"/home/homepage",
 element:<HomePage/>
+      },
+      {
+        path:"/home/noitif",
+        element:<NotificationPage/>
       }
     ]
   }
