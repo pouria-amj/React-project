@@ -13,6 +13,7 @@ import Profile from './Pages/Profile'
 import HomeLayout from './Components/HomeLayout'
 import HomePage from './Pages/HomePage'
 import NotificationPage from './Pages/Notfication'
+import TopDoc from './Pages/TopDoc'
 const router = createBrowserRouter([
 { 
   path:"/",
@@ -65,6 +66,10 @@ element:<HomePage/>
       {
         path:"/home/noitif",
         element:<NotificationPage/>
+      },
+      {
+        path:"/home/top",
+        element:<TopDoc/>
       }
     ]
   }
