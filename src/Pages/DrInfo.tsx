@@ -1,4 +1,5 @@
 import { FC } from "react"
+import Button from "../Components/Button"
 
 const DrInfo:FC = ()=>{
     return(
@@ -77,8 +78,29 @@ const DrInfo:FC = ()=>{
 <p className="pt-24 text-2xl font-semibold">About me</p>
 <p className="font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores inventore tenetur incidunt quas pariatur ad officia id blanditiis magni. Suscipit temporibus sed eos possimus assumenda at architecto eligendi. Magnam, architecto.
 </p>
-<p className="pt-24 text-2xl font-semibold">Working time</p>
+<p className="pt-5 text-2xl font-semibold">Working time</p>
 <p className="pt-3">Monday - Friday , 8:00 Am - 20:00 Pm</p>
+<div className="flex justify-between pt-7 items-center">
+<p className=" text-2xl font-semibold ">Reviews</p>
+<p className="text-[#48B1F9] font-semibold">See All</p>
+</div>
+<div className="flex justify-between pt-5">
+    <div className="flex items-center">
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+</svg>
+<p className="pl-2 font-semibold">Charolete hanini</p>
+    </div>
+    <div className="border-2  border-[#48B1F9] w-auto h-auto flex items-center py-0.5 px-3 rounded-2xl">
+    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" fill="#48B1F9" className="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+<p className="pl-2 text-[#48B1F9]">5</p>
+    </div>
+</div>
+<p className="py-3 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quaerat earum explicabo dolor odio ratione et consectetur libero, corrupti nesciunt?</p>
+<Button className="mt-5 mb-3" varient="containd">{"Book Appointment"}</Button>
         </>
     )
 }

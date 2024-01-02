@@ -15,6 +15,7 @@ import HomePage from './Pages/HomePage'
 import NotificationPage from './Pages/Notfication'
 import TopDoc from './Pages/TopDoc'
 import DrInfo from './Pages/DrInfo'
+import Reviews from './Pages/Reviews'
 const router = createBrowserRouter([
 { 
   path:"/",
@@ -75,6 +76,10 @@ element:<HomePage/>
       {
         path:"/home/info",
         element:<DrInfo/>
+      },
+      {
+        path:"/home/reviwes",
+        element:<Reviews/>
       }
     ]
   }
