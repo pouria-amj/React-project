@@ -14,6 +14,7 @@ import HomeLayout from './Components/HomeLayout'
 import HomePage from './Pages/HomePage'
 import NotificationPage from './Pages/Notfication'
 import TopDoc from './Pages/TopDoc'
+import DrInfo from './Pages/DrInfo'
 const router = createBrowserRouter([
 { 
   path:"/",
@@ -70,6 +71,10 @@ element:<HomePage/>
       {
         path:"/home/top",
         element:<TopDoc/>
+      },
+      {
+        path:"/home/info",
+        element:<DrInfo/>
       }
     ]
   }

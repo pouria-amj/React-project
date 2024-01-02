@@ -12,7 +12,7 @@ const Button:FC<ButtonProps> =({children,varient,...restprops})=>{
     return(
         <button 
         {...restprops}
-        className={`${ButtonStyls[varient ?? "text"]} py-2 px-5  outline-none w-full rounded-3xl `}>
+        className={`${ButtonStyls[varient ?? "text"]} py-2 px-5  outline-none w-full rounded-3xl ${restprops.className} `}>
             {children}</button>
 
     )
