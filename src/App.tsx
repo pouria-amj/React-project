@@ -17,6 +17,8 @@ import TopDoc from './Pages/TopDoc'
 import DrInfo from './Pages/DrInfo'
 import Reviews from './Pages/Reviews'
 import Appointment from './Pages/Appointment'
+import Payment from './Pages/Payment'
+import AddCard from './Pages/NewCard'
 const router = createBrowserRouter([
 { 
   path:"/",
@@ -85,7 +87,16 @@ element:<HomePage/>
       {
         path:"/home/appointment",
         element:<Appointment/>
+      },
+      {
+        path:"/home/payment",
+        element:<Payment/>
+      },
+      {
+        path:"/home/addcart",
+        element:<AddCard/>
       }
+      
     ]
   }
 ])
