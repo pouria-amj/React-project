@@ -1,9 +1,11 @@
 import { FC } from "react";
+import Textfield from "../Components/Textfield";
+import Button from "../Components/Button";
 
 const AddCard: FC = () => {
   return (
     <>
-      <div className="flex justify-between items-center pb-7">
+      <div className="flex justify-between items-center pb-7 ">
         <div className="flex items-center gap-6">
           <div className="rounded-full h-10 w-10 bg-slate-50 pt-[8.9px] pl-2.5">
             <svg
@@ -23,7 +25,27 @@ const AddCard: FC = () => {
           <p className="text-2xl font-semibold">Add New Card</p>
         </div>
       </div>
-      <img className="rounded-lg h-24  w-24 object-cover  " src="/Plain-card.JPG" />
+      <div className="flex justify-center py-5 ">
+        <img className="" src="/Card 1.jpg" />
+      </div>
+
+      <Textfield
+        type="text"
+        label="Card Name"
+        placeholder="Enter your Card Name"
+      />
+      <Textfield
+        type="text"
+        label="Card Number"
+        placeholder="Enter your Card Number"
+      />
+      <div className="flex gap-5">
+        <Textfield type="date" label="Expiry Date" />
+        <Textfield type="text" label="CVV" />
+      </div>
+      <Button className="mt-16 mb-5" varient="containd">
+        {"Next"}
+      </Button>
     </>
   );
 };

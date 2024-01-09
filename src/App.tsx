@@ -19,6 +19,7 @@ import Reviews from './Pages/Reviews'
 import Appointment from './Pages/Appointment'
 import Payment from './Pages/Payment'
 import AddCard from './Pages/NewCard'
+import Summary from './Pages/Summary'
 const router = createBrowserRouter([
 { 
   path:"/",
@@ -95,6 +96,10 @@ element:<HomePage/>
       {
         path:"/home/addcart",
         element:<AddCard/>
+      },
+      {
+        path:"/home/summary",
+        element:<Summary/>
       }
       
     ]
