@@ -1,4 +1,5 @@
 import { FC } from "react"
+import Button from "../Components/Button"
 
 const Summary:FC = ()=>{
     return(
@@ -23,15 +24,37 @@ const Summary:FC = ()=>{
           <p className="text-2xl font-semibold">Reviews Summary</p>
         </div>
       </div>
-      <div className="bg-slate-50 rounded-lg w-auto h-auto mt-8 flex ">
+      <div className="bg-slate-100 rounded-lg w-auto h-auto mt-8 flex ">
             <div className="p-6 ">
         <img className="rounded-lg h-24  w-24 object-cover  " src="/doc2.jpg" />
             </div>
             <div className="pt-6 w-full">
         <p className="text-lg font-medium ">Dr.Tom Rice</p>
-            <p className="text-base text-slate-500 pt-3">Immunologist  | Chirist Hospital</p> 
+            <p className="text-base text-slate-500 pt-3">Immunologist</p> 
+            <p className="text-base text-slate-500 pt-1">Chirist Hospital in Londen , UK</p> 
         </div>     
         </div>
+        <div className="bg-slate-100 rounded-lg w-auto h-auto mt-5 py-5">
+            <div className="flex justify-between px-6 ">
+            <p className="text-slate-600 ">Date & Hour</p>
+            <p className="font-semibold">Dec 23.20204 | 10.00 AM</p>
+            </div>
+            <div className="flex justify-between px-6 pt-5">
+            <p className="text-slate-600 ">Duration</p>
+            <p className="font-semibold">30 Minutes</p>
+            </div>
+        </div>
+        <div className="bg-slate-100 rounded-lg w-auto h-auto mt-5 py-5">
+            <div className="flex justify-between px-6 ">
+            <p className="text-slate-600 ">Amount</p>
+            <p className="font-semibold">$20</p>
+            </div>
+            <div className="flex justify-between px-6 pt-5">
+            <p className="text-slate-600 ">{"Duration(30 Minutes)"}</p>
+            <p className="font-semibold">{"1 × $20"} </p>
+            </div>
+        </div>
+        <Button className="mt-28" varient="containd">{"Pay"}</Button>
         </>
     )
 }

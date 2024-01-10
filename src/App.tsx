@@ -20,6 +20,7 @@ import Appointment from './Pages/Appointment'
 import Payment from './Pages/Payment'
 import AddCard from './Pages/NewCard'
 import Summary from './Pages/Summary'
+import Articles from './Pages/Articles'
 const router = createBrowserRouter([
 { 
   path:"/",
@@ -100,6 +101,10 @@ element:<HomePage/>
       {
         path:"/home/summary",
         element:<Summary/>
+      },
+      {
+        path:"/home/articles",
+        element:<Articles/>
       }
       
     ]
