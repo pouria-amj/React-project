@@ -1,7 +1,20 @@
 import React, { FC } from 'react';
 import Textfield from '../Components/Textfield';
 import Button from '../Components/Button';
+import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+
+
+const LoginSchema = yup.object({
+  text:yup.string().required(),
+  date:yup.string().required(),
+  number:yup.number().required("Please Enter your Age")  
+})
 const Profile:FC =()=> {
+  const {register,handleSubmit,formState:{errors}}= useForm({
+    resolver:yupResolver(LoginSchema)
+  })
     const uploadedImage = React.useRef(null);
     const imageUploader = React.useRef(null);
   
@@ -67,10 +80,23 @@ const Profile:FC =()=> {
 </svg>        </div>
         
       </div>
-      <form className='pt-16 pb-9'>
-      <Textfield   type='text' placeholder='Full name'/>
-      <Textfield type='text' placeholder='Nickname'/>
-      <Textfield type='date' label='Date of Birth'/>
+      <form className='pt-16 pb-9'  onSubmit={handleSubmit((data)=>{console.log(data)})}>
+      <Textfield   type='text' placeholder='Full name' 
+       helperText={<>{errors.text?.message??''}</>}
+       validation={register('text')}
+      />
+      <Textfield type='text' placeholder='Nickname'
+        helperText={<>{errors.text?.message??''}</>}
+        validation={register('text')}
+      />
+      <Textfield type='date' label='Date of Birth'
+        helperText={<>{errors.date?.message??''}</>}
+        validation={register('date')}
+      />
+       <Textfield type='number' label='Age'
+        helperText={<>{errors.number?.message??''}</>}
+        validation={register('number')}
+      />
       <div className='flex bg-slate-100 items-center px-1 py-3 mb-10 focus-within:border-2 border-2 rounded-md border-transparent focus-within:border-blue-500'>
 
       <label htmlFor="gender">Gender:</label>
