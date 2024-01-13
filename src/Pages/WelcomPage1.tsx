@@ -4,7 +4,7 @@ import {  useNavigate } from "react-router-dom";
 
 const WelcomPage: FC = () => {
     const navigate = useNavigate()
-    const handelClick =()=>{
+    const handelClick1 =()=>{
         navigate("/welcome2")
     }
   return <div>
@@ -16,7 +16,7 @@ const WelcomPage: FC = () => {
 
     <p className=" w-2/3 text-center text-lg font-medium">The best online dotor apointment & consultation app of the centry for your healt and medical needs</p>
 </div>
-<Button onClick={handelClick}  varient="containd">{"Next"}</Button>
+<Button onClick={handelClick1}  varient="containd">{"Next"}</Button>
   </div>;
 };
 export default WelcomPage;
