@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FC, useState } from "react"
 import Button from "../Components/Button"
 import {  useNavigate } from "react-router-dom";
 
@@ -7,8 +7,13 @@ const TopDoc:FC = () =>{
     const handelClick =()=>{
         navigate("/home/homepage")
     }
+    const [isClicked, setIsClicked] = useState(false);
+    const [isClicked1, setIsClicked1] = useState(false);
+    const [isClicked2, setIsClicked2] = useState(false);
+    const [isClicked3, setIsClicked3] = useState(false);
+
     return(
-        <>
+        <>    
          <div className="flex items-center gap-6">
             <div className="rounded-full h-10 w-10 bg-slate-50 pt-[8.9px] pl-2.5">
 
@@ -24,7 +29,7 @@ const TopDoc:FC = () =>{
 <Button varient="outline">{"Dentist"}</Button>
 <Button varient="outline">{"Nutritionist"}</Button>
         </div>
-        <div className="bg-slate-50 rounded-lg w-auto h-auto mt-8 flex ">
+        <div className=" cursor-pointer bg-slate-50 rounded-lg w-auto h-auto mt-8 flex ">
             
             <div className="p-6 ">
         <img className="rounded-lg h-24  w-24 object-cover  " src="/doc3.jpg" />
@@ -32,9 +37,18 @@ const TopDoc:FC = () =>{
             <div className="pt-6 w-full">
         <div className="flex justify-between  items-center pr-10">
         <p className="text-lg font-medium ">Dr.randy Parker</p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#48B1F9" className="bi bi-heart" viewBox="0 0 16 16">
-  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+        <div onClick={() => setIsClicked(!isClicked)}>
+        {isClicked ?      
+ <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FF2222" className="bi bi-heart-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
 </svg>
+:
+        <svg                
+ xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#48B1F9" className="bi bi-heart" viewBox="0 0 16 16">
+  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+</svg> 
+}
+        </div>
             </div>
             <p className="text-base text-slate-500 pt-3">Cardiologist  | The Vally Hospital</p>
             <div className="flex items-center gap-5 pt-3">
@@ -47,7 +61,7 @@ const TopDoc:FC = () =>{
         </div>
         
         </div>
-        <div className="bg-slate-50 rounded-lg w-auto h-auto mt-8 flex ">
+        <div className="bg-slate-50 cursor-pointer rounded-lg w-auto h-auto mt-8 flex ">
             
             <div className="p-6 ">
         <img className="rounded-lg h-24  w-24 object-cover  " src="/doc2.jpg" />
@@ -55,9 +69,18 @@ const TopDoc:FC = () =>{
             <div className="pt-6 w-full">
         <div className="flex justify-between items-center pr-10">
         <p className="text-lg font-medium ">Dr.Tom Rice</p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#48B1F9" className="bi bi-heart" viewBox="0 0 16 16">
-  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+        <div onClick={() => setIsClicked1(!isClicked1)}>
+        {isClicked1 ?      
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FF2222" className="bi bi-heart-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
 </svg>
+: 
+        <svg                
+ xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#48B1F9" className="bi bi-heart" viewBox="0 0 16 16">
+  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+</svg> 
+}
+        </div>
             </div>
             <p className="text-base text-slate-500 pt-3">Immunologist  | Chirist Hospital</p>
             <div className="flex items-center gap-5 pt-3 ">
@@ -70,7 +93,7 @@ const TopDoc:FC = () =>{
         </div>
         
         </div>
-        <div className="bg-slate-50 rounded-lg w-auto h-auto mt-8 flex ">
+        <div className="bg-slate-50 cursor-pointer rounded-lg w-auto h-auto mt-8 flex ">
             
             <div className="p-6 ">
         <img className="rounded-lg h-24  w-24 object-cover  " src="/doc5.jpg" />
@@ -78,9 +101,18 @@ const TopDoc:FC = () =>{
             <div className="pt-6 w-full">
         <div className="flex justify-between items-center pr-10">
         <p className="text-lg font-medium ">Dr.Harry Kane</p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#48B1F9" className="bi bi-heart" viewBox="0 0 16 16">
+        <div onClick={() => setIsClicked2(!isClicked2)}>
+        {isClicked2 ?      
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FF2222" className="bi bi-heart-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+</svg>
+ :
+        <svg                
+ xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#48B1F9" className="bi bi-heart" viewBox="0 0 16 16">
   <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
 </svg>
+}
+        </div>
             </div>
             <p className="text-base text-slate-500 pt-3">Neurologist  | Frankline Hospital</p>
             <div className="flex items-center gap-5 pt-3">
@@ -93,7 +125,7 @@ const TopDoc:FC = () =>{
         </div>
         
         </div>
-        <div className="bg-slate-50 rounded-lg w-auto h-auto mt-8 flex ">
+        <div className="bg-slate-50 cursor-pointer rounded-lg w-auto h-auto mt-8 flex ">
             
             <div className="p-6 ">
         <img className="rounded-lg h-24  w-24 object-cover  " src="/doc.jpg" />
@@ -101,9 +133,18 @@ const TopDoc:FC = () =>{
             <div className="pt-6 w-full">
         <div className="flex justify-between items-center pr-10">
         <p className="text-lg font-medium ">Dr.Robert wood</p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#48B1F9" className="bi bi-heart" viewBox="0 0 16 16">
-  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+        <div onClick={() => setIsClicked3(!isClicked3)}>
+        {isClicked3 ?     
+ <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FF2222" className="bi bi-heart-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
 </svg>
+:
+         <svg                
+ xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#48B1F9" className="bi bi-heart" viewBox="0 0 16 16">
+  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+</svg> 
+}
+        </div>
             </div>
             <p className="text-base text-slate-500 pt-3">Allergist  | JFK Medical Hospital</p>
             <div className="flex items-center gap-5 pt-3">
@@ -117,6 +158,9 @@ const TopDoc:FC = () =>{
         
         </div>
  
+
+
+
         </>
     )
 }
