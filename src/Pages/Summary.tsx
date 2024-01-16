@@ -1,12 +1,20 @@
 import { FC } from "react"
 import Button from "../Components/Button"
+import {  useNavigate } from "react-router-dom";
 
 const Summary:FC = ()=>{
+  const navigate = useNavigate()
+  const handelClick =()=>{
+      navigate("/home/homepage")
+  }
+  const handelClick1 =()=>{
+    navigate("/home/payment")
+}
     return(
         <>
            <div className="flex justify-between items-center pb-7 ">
         <div className="flex items-center gap-6">
-          <div className="rounded-full h-10 w-10 bg-slate-50 pt-[8.9px] pl-2.5">
+          <div onClick={handelClick1} className="cursor-pointer rounded-full h-10 w-10 bg-slate-50 pt-[8.9px] pl-2.5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="23"
@@ -26,10 +34,10 @@ const Summary:FC = ()=>{
       </div>
       <div className="bg-slate-100 rounded-lg w-auto h-auto mt-8 flex ">
             <div className="p-6 ">
-        <img className="rounded-lg h-24  w-24 object-cover  " src="/doc2.jpg" />
+        <img className="rounded-lg h-24  w-24 object-cover  " src="/doc3.jpg" />
             </div>
             <div className="pt-6 w-full">
-        <p className="text-lg font-medium ">Dr.Tom Rice</p>
+        <p className="text-lg font-medium ">Dr.Randy parker</p>
             <p className="text-base text-slate-500 pt-3">Immunologist</p> 
             <p className="text-base text-slate-500 pt-1">Chirist Hospital in Londen , UK</p> 
         </div>     
@@ -54,7 +62,7 @@ const Summary:FC = ()=>{
             <p className="font-semibold">{"1 × $20"} </p>
             </div>
         </div>
-        <Button className="mt-28" varient="containd">{"Pay"}</Button>
+        <Button onClick={handelClick} className="cursor-pointer mt-28" varient="containd">{"Pay"}</Button>
         </>
     )
 }

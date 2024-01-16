@@ -1,12 +1,25 @@
-import { FC } from "react"
+import { FC,useState } from "react"
 import Button from "../Components/Button"
+import {  useNavigate } from "react-router-dom";
 
 const DrInfo:FC = ()=>{
+  const navigate = useNavigate()
+  const handelClick =()=>{
+      navigate("/home/reviwes")
+  }
+  const handelClick1 =()=>{
+    navigate("/home/top")
+}
+const handelClick2 =()=>{
+  navigate("/home/payment")
+}
+const [isClicked, setIsClicked] = useState(false);
+
     return(
         <>
         <div className="flex justify-between items-center pb-7">
          <div className="flex items-center gap-6">
-            <div className="rounded-full h-10 w-10 bg-slate-50 pt-[8.9px] pl-2.5">
+            <div onClick={handelClick1} className=" cursor-pointer rounded-full h-10 w-10 bg-slate-50 pt-[8.9px] pl-2.5">
 
         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
@@ -14,9 +27,18 @@ const DrInfo:FC = ()=>{
             </div>
 <p className="text-2xl font-semibold">Dr.randy Parker</p>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="curentcolor" className="bi bi-heart" viewBox="0 0 16 16">
-  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+        <div onClick={() => setIsClicked(!isClicked)}>
+        {isClicked ?      
+ <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#FF2222" className="bi bi-heart-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
 </svg>
+:
+        <svg                
+ xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#48B1F9" className="bi bi-heart" viewBox="0 0 16 16">
+  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+</svg> 
+}
+        </div> 
 </div>
 <div className="flex w-auto h-auto p-4 bg-slate-50 rounded-xl">
     <div>
@@ -82,7 +104,7 @@ const DrInfo:FC = ()=>{
 <p className="pt-3">Monday - Friday , 8:00 Am - 20:00 Pm</p>
 <div className="flex justify-between pt-7 items-center">
 <p className=" text-2xl font-semibold ">Reviews</p>
-<p className="text-[#48B1F9] font-semibold">See All</p>
+<p onClick={handelClick} className="hover:text-blue-700 cursor-pointer text-[#48B1F9] font-semibold">See All</p>
 </div>
 <div className="flex justify-between pt-5">
     <div className="flex items-center">
@@ -100,7 +122,7 @@ const DrInfo:FC = ()=>{
     </div>
 </div>
 <p className="py-3 font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quaerat earum explicabo dolor odio ratione et consectetur libero, corrupti nesciunt?</p>
-<Button className="mt-5 mb-3" varient="containd">{"Book Appointment"}</Button>
+<Button onClick={handelClick2} className="mt-5 mb-3" varient="containd">{"Book Appointment"}</Button>
         </>
     )
 }

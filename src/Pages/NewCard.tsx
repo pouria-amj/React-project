@@ -4,10 +4,12 @@ import Button from "../Components/Button";
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
+import {  useNavigate } from "react-router-dom";
+
 const LoginSchema = yup.object({
   name:yup.string().required(),
   cardnumber:yup.number().required(),
-  cvv:yup.number().required().lessThan(4),
+  cvv:yup.number().required(),
   date:yup.string().required(),
 
 })
@@ -15,11 +17,15 @@ const AddCard: FC = () => {
   const {register,handleSubmit,formState:{errors}}= useForm({
     resolver:yupResolver(LoginSchema)
   })
+  const navigate = useNavigate()
+  const handelClick =()=>{
+      navigate("/home/payment")
+  }
   return (
     <>
       <div className="flex justify-between items-center pb-7 ">
         <div className="flex items-center gap-6">
-          <div className="rounded-full h-10 w-10 bg-slate-50 pt-[8.9px] pl-2.5">
+          <div onClick={handelClick} className="cursor-pointer rounded-full h-10 w-10 bg-slate-50 pt-[8.9px] pl-2.5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="23"

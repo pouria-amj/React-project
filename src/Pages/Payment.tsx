@@ -1,12 +1,23 @@
 import { FC } from "react";
 import Button from "../Components/Button";
+import {  useNavigate } from "react-router-dom";
 
 const Payment: FC = () => {
+  const navigate = useNavigate()
+  const handelClick =()=>{
+      navigate("/home/info")
+  }
+  const handelClick1 =()=>{
+    navigate("/home/addcart")
+}
+const handelClick2 =()=>{
+  navigate("/home/summary")
+}
   return (
     <>
       <div className="flex justify-between items-center pb-7">
         <div className="flex items-center gap-6">
-          <div className="rounded-full h-10 w-10 bg-slate-50 pt-[8.9px] pl-2.5">
+          <div onClick={handelClick} className=" cursor-pointer rounded-full h-10 w-10 bg-slate-50 pt-[8.9px] pl-2.5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="23"
@@ -77,10 +88,10 @@ const Payment: FC = () => {
         </div>
         <input type="radio" />
       </div>
-      <Button className="mt-8" varient="outline">
+      <Button onClick={handelClick1} className="cursor-pointer mt-8" varient="outline">
         {"Add New Card"}
       </Button>
-      <Button className="mt-52 mb-3" varient="containd">
+      <Button onClick={handelClick2} className="cursor-pointer mt-52 mb-3" varient="containd">
         {"Next"}
       </Button>
     </>
