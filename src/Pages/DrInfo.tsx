@@ -11,7 +11,7 @@ const DrInfo:FC = ()=>{
     navigate("/home/top")
 }
 const handelClick2 =()=>{
-  navigate("/home/payment")
+  navigate("/home/appointment")
 }
 const [isClicked, setIsClicked] = useState(false);
 

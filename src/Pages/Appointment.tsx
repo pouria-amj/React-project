@@ -1,7 +1,15 @@
 import { FC, SetStateAction, useState } from "react";
 import Button from "../Components/Button";
+import {  useNavigate } from "react-router-dom";
 
 const Appointment: FC = () => {
+  const navigate = useNavigate()
+  const handelClick =()=>{
+    navigate("/home/info")
+}
+const handelClick2 =()=>{
+  navigate("/home/payment")
+}
   const [sDate, setsDate] = useState(new Date());
 
   const findMonthDays = (y: number, m: number) => {
@@ -72,7 +80,7 @@ const Appointment: FC = () => {
     <>
       <div className="flex justify-between items-center pb-7">
         <div className="flex items-center gap-6">
-          <div className="rounded-full h-10 w-10 bg-slate-50 pt-[8.9px] pl-2.5">
+          <div onClick={handelClick} className="cursor-pointer rounded-full h-10 w-10 bg-slate-50 pt-[8.9px] pl-2.5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="23"
@@ -168,7 +176,7 @@ const Appointment: FC = () => {
           {"17.30 PM"}
         </Button>
       </div>
-      <Button className="my-5" varient="containd">
+      <Button onClick={handelClick2} className="my-5" varient="containd">
         {"Next"}
       </Button>
     </>
