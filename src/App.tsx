@@ -21,6 +21,8 @@ import Payment from './Pages/Payment'
 import AddCard from './Pages/NewCard'
 import Summary from './Pages/Summary'
 import Articles from './Pages/Articles'
+import { Toaster } from 'react-hot-toast'
+import axios from 'axios'
 const router = createBrowserRouter([
 { 
   path:"/",
@@ -110,11 +112,15 @@ element:<HomePage/>
     ]
   }
 ])
-
+export const instance = axios.create({
+  baseURL:"http://localhost:5000"
+})
 const App : FC=()=> {
 
   return (
-    <RouterProvider router={router}/>
+    <>
+    <Toaster />
+    <RouterProvider router={router} /></>
   
 
   )

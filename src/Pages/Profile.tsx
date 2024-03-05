@@ -4,6 +4,7 @@ import Button from '../Components/Button';
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
+import {  useNavigate } from "react-router-dom";
 
 
 const LoginSchema = yup.object({
@@ -12,6 +13,10 @@ const LoginSchema = yup.object({
   number:yup.number().required("Please Enter your Age")  
 })
 const Profile:FC =()=> {
+  const navigate = useNavigate()
+  const handelClick =()=>{
+      navigate("/home/homepage")
+  }
   const {register,handleSubmit,formState:{errors}}= useForm({
     resolver:yupResolver(LoginSchema)
   })
@@ -107,7 +112,7 @@ const Profile:FC =()=> {
     </select>
       </div>
 
-<Button varient='containd' >{"Continue"}</Button>
+<Button onClick={handelClick} varient='containd' >{"Continue"}</Button>
     </form>
       </>
 

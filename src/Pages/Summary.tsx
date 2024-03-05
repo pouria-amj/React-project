@@ -45,7 +45,7 @@ const Summary:FC = ()=>{
         <div className="bg-slate-100 rounded-lg w-auto h-auto mt-5 py-5">
             <div className="flex justify-between px-6 ">
             <p className="text-slate-600 ">Date & Hour</p>
-            <p className="font-semibold">Dec 23.20204 | 10.00 AM</p>
+            <p className="font-semibold">Feb 23.2024 | 10.00 AM</p>
             </div>
             <div className="flex justify-between px-6 pt-5">
             <p className="text-slate-600 ">Duration</p>

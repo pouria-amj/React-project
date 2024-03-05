@@ -1,33 +1,57 @@
-import { FC } from "react"
+import { FC, useCallback } from "react"
 import Textfield from "../Components/Textfield"
 import Button from "../Components/Button"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
+import Cookies from "js-cookie"
+import toast from "react-hot-toast"
+import { instance } from "../App"
+import { useNavigate } from "react-router-dom"
+
+type loginFormType = {
+  username:string,
+  password:string
+}
+
+
 
 const LoginSchema = yup.object({
-  email:yup.string().required().email(),
-  password:yup.string().required()  
+  username:yup.string().required(),
+  password:yup.string().required()
+    
 })
 const LogIn:FC = ()=>{
   const {register,handleSubmit,formState:{errors}}= useForm({
     resolver:yupResolver(LoginSchema)
   })
+  const handelLoginUser = useCallback (async(data:loginFormType):Promise<void>=>{
+  try{ const res:any = await instance.post("/login",data)
+   console.log(res)
+   if(res.data.token){
+    Cookies.set("token",res.data.token)
+    toast.success("wellcom")
+    navigate("/home/homepage")
+   }} catch(err){
+    toast.error("some thing is wrong")
+   }
+  },[])
+  const navigate = useNavigate()
     return(
         <div>
         <img className="mt-[-50px]"  src="public/health.jpg" alt="" />
         <div className="pb-14">
             <p className="text-center text-3xl mt-[-90px]  font-bold">Login to Your Account</p>
         </div>
-        <form onSubmit={handleSubmit((data)=>{console.log(data)})} >
+        <form onSubmit={handleSubmit(handelLoginUser)} >
         <Textfield 
-        type="email"
+       // type="text"
         icon={<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  className="bi bi-envelope" viewBox="0 0 16 16">
         <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
       </svg>}
-        placeholder="Email"
-        helperText={<>{errors.email?.message??''}</>}
-        validation={register('email')}
+        placeholder="username"
+       // helperText={<>{errors.email?.message??''}</>}
+        validation={register('username')}
         />
         <Textfield
         type="password"
